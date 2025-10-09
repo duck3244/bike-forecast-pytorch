@@ -1,0 +1,2 @@
+Model,R²,RMSE,MAE,MAPE,Time
+MLP,0.8695,20.02,13.69,18.49%,5.32s

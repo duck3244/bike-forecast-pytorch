@@ -1,0 +1,8 @@
+Key Insights from Bike Demand Data Exploration
+==================================================
+
+1. Peak usage hours: 8, 7, 9
+2. Best weather condition: Clear
+3. Most popular season: Fall
+4. Temperature correlation with usage: 0.126
+5. Weekend usage is 0.3 bikes higher than weekdays

@@ -1,0 +1,82 @@
+# PyTorch Bike Forecasting Configuration
+
+# Data settings
+data:
+  synthetic_samples: 8760  # One year of hourly data
+  test_size: 0.2
+  val_size: 0.2
+  random_seed: 42
+  target_column: "count"
+
+# Feature engineering
+features:
+  numerical_features:
+    - temp
+    - atemp
+    - humidity
+    - windspeed
+    - temp_humidity
+    - temp_windspeed
+  
+  categorical_features:
+    - season
+    - weather
+    - holiday
+    - workingday
+  
+  cyclical_features:
+    - hour
+    - day
+    - month
+    - weekday
+  
+  engineered_features:
+    - is_rush_hour
+    - is_weekend
+
+# Model architectures
+models:
+  mlp:
+    hidden_sizes: [512, 256, 128, 64]
+    dropout_rate: 0.2
+    activation: "relu"
+    batch_norm: true
+  
+  lstm:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.2
+    bidirectional: false
+
+# Training parameters
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 1e-5
+  early_stopping_patience: 20
+  lr_scheduler:
+    type: "ReduceLROnPlateau"
+    patience: 10
+    factor: 0.5
+  
+# Device settings
+device:
+  use_cuda: true  # Set to false to force CPU usage
+  
+# Logging and output
+output:
+  model_save_path: "models/"
+  log_level: "INFO"
+  save_predictions: true
+  plot_results: true
+  
+# Evaluation
+evaluation:
+  metrics:
+    - mse
+    - rmse
+    - mae
+    - r2
+  plot_sample_size: 500
+  feature_importance: true

@@ -1,0 +1,6 @@
+Model Comparison Recommendations
+========================================
+
+Best Overall: Gradient Boosting (R²: 0.8736)
+Fastest: Ridge Regression (0.00s)
+Most Efficient: Ridge Regression (Efficiency: 13309.5065)

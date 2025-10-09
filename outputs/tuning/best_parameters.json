@@ -1,0 +1,16 @@
+{
+  "best_params": {
+    "hidden_sizes": [
+      512,
+      256,
+      128,
+      64
+    ],
+    "dropout_rate": 0.3,
+    "learning_rate": 0.01,
+    "batch_size": 32,
+    "epochs": 100
+  },
+  "best_score": 0.8696438475864805,
+  "model_type": "mlp"
+}
